@@ -18,4 +18,6 @@ data class User(
     val usernameUser: String,
     @ColumnInfo(name = "email_usuario")
     val emailUser: String,
+    @ColumnInfo(name = "address_usuario")
+    val addressUser: String,
 )

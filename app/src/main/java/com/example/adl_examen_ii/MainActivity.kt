@@ -16,6 +16,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.adl_09.repositories.UserRepository
 import com.example.adl_examen_ii.data.UserDatabase
+import com.example.adl_examen_ii.entities.AddressEntity
+import com.example.adl_examen_ii.entities.GeoEntity
 import com.example.adl_examen_ii.entities.UserEntity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -113,7 +115,18 @@ class MainActivity : AppCompatActivity() {
                             id = user.id,
                             name = user.nameUser,
                             username = user.usernameUser,
-                            email = user.emailUser
+                            email = user.emailUser,
+                            address = AddressEntity(
+                                id = user.id,
+                                street = user.addressUser.split(",")[0],
+                                suite = user.addressUser.split(",")[1],
+                                city = user.addressUser.split(",")[2],
+                                zipcode = user.addressUser.split(",")[3],
+                                geo = GeoEntity(
+                                    lat = user.addressUser.split(",")[4],
+                                    lng = ""
+                                )
+                            )
                         )
                     )
                 }
@@ -130,11 +143,14 @@ class MainActivity : AppCompatActivity() {
                     User(
                         nameUser = user.name,
                         usernameUser = user.username,
-                        emailUser = user.email
+                        emailUser = user.email,
+                        addressUser = "${user.address.street}, ${user.address.suite}, ${user.address.city}, ${user.address.zipcode}, ${user.address.geo.lat}, ${user.address.geo.lng}",
                     )
                 )
             } catch (e: Exception) {
-                Toast.makeText(this@MainActivity, "Error al guardar", Toast.LENGTH_SHORT).show()
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(this@MainActivity, "Error al guardar", Toast.LENGTH_SHORT).show()
+                }
             }
         }
         Toast.makeText(this, "Usuario: ${user.name} \nGuardado con éxito", Toast.LENGTH_SHORT)

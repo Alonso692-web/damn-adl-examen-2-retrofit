@@ -35,6 +35,7 @@ class CustomAdapterRecyclerView(var listadoUsuarios: List<UserEntity>) :
         val nombreUsuario: TextView = itemView.findViewById(R.id.tvNombre)
         val usernameUsuario: TextView = itemView.findViewById(R.id.tvUsername)
         val emailUsuario: TextView = itemView.findViewById(R.id.tvEmail)
+        val addressUsuario: TextView = itemView.findViewById(R.id.tvAddress)
 
         // Confirmar que se crearon las vistas
         init {
@@ -64,6 +65,8 @@ class CustomAdapterRecyclerView(var listadoUsuarios: List<UserEntity>) :
         holder.nombreUsuario.text = "Nombre: ${usuario.name}"
         holder.usernameUsuario.text = "Username: ${usuario.username}"
         holder.emailUsuario.text = "Email: ${usuario.email}"
+        holder.addressUsuario.text =
+            "Dirección: ${usuario.address.city}, ${usuario.address.street}, ${usuario.address.suite}, ${usuario.address.zipcode}"
     }
 
     fun updateListUsers(newUsers: List<UserEntity>) {
