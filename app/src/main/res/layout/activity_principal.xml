@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_principal"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".PrincipalActivity">
+
+    <Button
+        android:id="@+id/btnIrMain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:backgroundTint="@color/color_rojo_botones"
+        android:text="Ir a Usuarios"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/btnCreditos"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:backgroundTint="@color/color_rojo_botones"
+        android:text="Créditos"
+        android:textSize="28sp" />
+
+    <Button
+        android:id="@+id/btnSalir"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:backgroundTint="@color/color_rojo_botones"
+        android:text="Salir"
+        android:textSize="28sp" />
+
+</LinearLayout>

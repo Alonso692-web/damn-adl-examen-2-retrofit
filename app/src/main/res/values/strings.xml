@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">ADL-EXAMEN-II</string>
+    <string name="etiqueta_creditos_boton_regresar">Regresar</string>
+    <string name="etiqueta_creditos_nombre">Alumno: \nAlonso Domínguez López</string>
+    <string name="etiqueta_creditos_grupo">Grupo: 7CM1</string>
+    <string name="etiqueta_creditos_correo">Correo: \nadominguezl2100@alumno.ipn.mx</string>
+</resources>
